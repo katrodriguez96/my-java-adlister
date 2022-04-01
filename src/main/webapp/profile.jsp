@@ -14,5 +14,6 @@
 <body>
 <%@ include file="partials/navbar.jsp" %>
 <h1>Login successful</h1>
+<p>test</p>
 </body>
 </html>
