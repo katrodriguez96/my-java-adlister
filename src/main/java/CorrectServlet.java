@@ -9,6 +9,9 @@ import java.io.IOException;
 public class CorrectServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String outcome = "Won";
+        req.setAttribute("outcome", outcome);
+
         req.getRequestDispatcher("/outcome.jsp").forward(req, resp);
     }
 }

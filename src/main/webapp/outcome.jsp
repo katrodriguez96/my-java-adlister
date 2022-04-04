@@ -11,6 +11,6 @@
     <title>Guessing Outcome</title>
 </head>
 <body>
-<h1>You {Won/Lose}!</h1>
+<h1>You ${object}!</h1>
 </body>
 </html>
