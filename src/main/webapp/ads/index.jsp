@@ -18,6 +18,7 @@
             <p>${ad.description}</p>
         </div>
     </c:forEach>
+
 </div>
 
 </body>
