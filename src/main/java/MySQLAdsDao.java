@@ -1,12 +1,13 @@
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import com.mysql.cj.jdbc.Driver;
 
 public class MySQLAdsDao implements Ads{
     private Connection connection;
 
-    public MySQLAdsDao() throws SQLException {
-        Config config = new Config();
+    public MySQLAdsDao(Config config) throws SQLException {
+        DriverManager.registerDriver(new Driver());
         connection = DriverManager.getConnection(
                 config.getUrl(),
                 config.getUser(),
@@ -29,6 +30,6 @@ public class MySQLAdsDao implements Ads{
     @Override
     public int insert(Ad ad) throws SQLException {
         Statement statement = connection.createStatement();
-        return statement.executeUpdate("INSERT INTO ads (id, user_id, title, description) VALUES(" + ad.getId() + ", " + ad.getUserId() + ", " + ad.getTitle() + ", " + ad.getDescription() + ")");
+        return statement.executeUpdate("INSERT INTO ads (user_id, title, description) VALUES(" + ad.getUserId() + ", '" + ad.getTitle() + "', '" + ad.getDescription() + "')");
     }
 }

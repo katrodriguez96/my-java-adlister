@@ -20,7 +20,7 @@ public class ListAdsDao implements Ads {
         // really the database would handle this
         ad.setId((long) ads.size());
         ads.add(ad);
-        return ad.getId();
+        return (int) ad.getId();
     }
 
     private List<Ad> generateAds() {
